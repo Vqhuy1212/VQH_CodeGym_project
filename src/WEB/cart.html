@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .total {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    button {
+      border: none;
+      background: none;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Giỏ hàng</h2>
+
+  <div id="cart"></div>
+
+  <div class="total" id="total"></div>
+
+  <a href="index.html">← Tiếp tục mua</a>
+</div>
+
+<script>
+  function showCart() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let html = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price * item.qty;
+
+      html += `
+        <div class="item">
+            <span>${item.name} x${item.qty}</span>
+            <span>${item.price}</span>
+            <button onclick="removeItem(${index})">X</button>
+        </div>
+        `;
+    });
+
+    document.getElementById("cart").innerHTML = html;
+    document.getElementById("total").innerText = "Tổng: " + total + "đ";
+  }
+
+  function removeItem(index) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    showCart();
+  }
+
+  showCart();
+</script>
+
+</body>
+</html>
