@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách client</title>
+</head>
+<body>
+
+<h2>Danh sách client</h2>
+
+<!-- THÊM USER -->
+<h3>Thêm client</h3>
+<input type="text" id="name" placeholder="Name">
+<input type="number" id="birthYear" placeholder="Birth Year">
+<input type="text" id="province" placeholder="Province">
+<input type="text" id="city" placeholder="City">
+<button onclick="addUser()">Thêm</button>
+
+<h3>Tìm kiếm</h3>
+<input type="text" id="search" placeholder="Nhập tên..." oninput="searchUser()">
+
+<br><br>
+<button onclick="deleteUser()">Xóa người cuối</button>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birth Year</th>
+        <th>Province</th>
+        <th>City</th>
+    </tr>
+    </thead>
+    <tbody id="userList"></tbody>
+</table>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
