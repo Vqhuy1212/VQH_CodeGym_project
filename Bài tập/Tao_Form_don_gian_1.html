@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form đơn giản</title>
+
+    <style>
+        body {
+            background-color: #d9f0f5;
+            font-family: "Press Start 2P", monospace;
+        }
+
+        .container {
+            width: 580px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+
+        form {
+            background-color: white;
+            padding: 3px;
+        }
+
+        h2 {
+            background-color: #E25822;
+            border: solid white;
+            padding-top: 2px;
+            text-align: center;
+            margin: 1px;
+            color: white;
+        }
+
+        .row {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .label {
+            display: inline-block;
+            width: 120px;
+            color: blue;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            width: 250px;
+            padding: 3px;
+            margin-left: 10px;
+        }
+
+        input[type="email"] {
+            width: 200px;
+            padding: 3px;
+            margin-left: 10px;
+        }
+
+        .hobbies {
+            display: grid;
+            grid-template-columns: repeat(3, 110px);
+            gap: 5px 10px;
+            margin-left: 10px;
+            color: orange;
+        }
+
+        .buttons {
+            margin-left: 140px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 5px 10px;
+            border: 1px solid gray;
+            background-color: #e0e0e0;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form>
+        <h2>SỞ THÍCH CỦA BẠN</h2>
+
+        <div class="row">
+            <span class="label">Họ và tên</span>
+            <input type="text" name="yourname">
+        </div>
+
+        <div class="row">
+            <span class="label">Email</span>
+            <input type="email" name="email">
+        </div>
+
+        <div class="row">
+            <span class="label">Sở thích</span>
+
+
+            <div class="hobbies">
+                <label><input type="checkbox" name="hobby" value="sport">Thể thao</label>
+                <label><input type="checkbox" name="hobby" value="music">Âm nhạc</label>
+                <label><input type="checkbox" name="hobby" value="reading">Đọc sách</label>
+
+                <label><input type="checkbox" name="hobby" value="web">Lướt web</label>
+                <label><input type="checkbox" name="hobby" value="game">Chơi game</label>
+                <label><input type="checkbox" name="hobby" value="film">Điện ảnh</label>
+
+                <label><input type="checkbox" name="hobby" value="travel">Du lịch</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Gửi thông tin">
+            <input type="reset" value="Nhập lại">
+        </div>
+    </form>
+</div>
+</body>
+</html>
