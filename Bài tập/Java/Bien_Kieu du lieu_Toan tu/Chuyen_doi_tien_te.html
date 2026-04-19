@@ -25,7 +25,7 @@
                 <option value="USD">USD</option>
             </select>
         </td>
-        <td><button onclick="ChangeMoney()">Convert</button></td>
+        <td><button type="button" onclick="ChangeMoney()">Convert</button></td>
     </tr>
     <tr>
         <td colspan="4" id="result"></td>
@@ -43,12 +43,13 @@
         let Amount = parseFloat(document.getElementById("amount").value);
         let FromC = document.getElementById("fromC").value;
         let ToC = document.getElementById("toC").value;
-        let Result = (Amount / rates[FromC]) * rates[ToC];
 
         if (isNaN(Amount)) {
             document.getElementById("result").innerHTML = 'NaN';
             return;
         }
+
+        let Result = (Amount / rates[FromC]) * rates[ToC];
 
 <!--        if (FromC == "USD" && To == "VND") {-->
 <!--            Result = "Result: " + (Amount * 23000) + " Đ";-->
