@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhiệt độ</title>
+</head>
+<body>
+<h2>Nhập độ</h2>
+<input type="number" id="temp" placeholder="Nhập nhiệt độ C">
+<button onclick="chuyenDo()">Nhập</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function chuyenDo() {
+        let C = Number(document.getElementById("temp").value);
+
+        let F = (C * (9/5)) + 32;
+
+        document.getElementById("ketqua").innerHTML = "Result: " + F + " °F";
+    }
+</script>
+</body>
+</html>

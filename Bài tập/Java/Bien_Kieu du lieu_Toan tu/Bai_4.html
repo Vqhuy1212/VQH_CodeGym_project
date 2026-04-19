@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chu vi hình tròn</title>
+</head>
+<body>
+<h2>Nhập bán kính</h2>
+<input type="number" id="radius" placeholder="Nhập R (cm)">
+<button onclick="chuVi()">Nhập</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function chuVi() {
+        let R = Number(document.getElementById("radius").value);
+
+        let C = Math.PI * R * 2;
+
+        document.getElementById("ketqua").innerHTML =
+            "Result: " + C.toFixed(2) + " cm";
+    }
+</script>
+</body>
+</html>

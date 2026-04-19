@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 1</title>
+</head>
+<body>
+<h2>Nhập điểm</h2>
+
+Vật lý: <input type="number" id="ly"><br><br>
+Hóa học: <input type="number" id="hoa"><br><br>
+Sinh học: <input type="number" id="sinh"><br><br>
+
+<button onclick="tinhDiem()">Tính</button>
+
+<p id="ketqua"></p>
+<script>
+    function tinhDiem() {
+    let ly = Number(document.getElementById("ly").value);
+    let hoa = Number(document.getElementById("hoa").value);
+    let sinh = Number(document.getElementById("sinh").value);
+
+    let tong = ly + hoa + sinh;
+    let trungBinh = tong / 3;
+
+    document.getElementById("ketqua").innerHTML =
+        "Tổng: " + tong + "<br>Trung bình: " + trungBinh;
+    }
+</script>
+</body>
+</html>

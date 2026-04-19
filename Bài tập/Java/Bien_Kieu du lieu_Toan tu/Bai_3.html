@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tròn</title>
+</head>
+<body>
+<h2>Nhập bán kính</h2>
+<input type="number" id="radius" placeholder="Nhập R (cm)">
+<button onclick="dienTich()">Nhập</button>
+
+<p id="ketqua"></p>
+
+<script>
+    function dienTich() {
+        let R = Number(document.getElementById("radius").value);
+
+        let S = Math.PI * R * R;
+
+        document.getElementById("ketqua").innerHTML =
+            "Result: " + S.toFixed(2) + " cm<sup>2</sup>";
+    }
+</script>
+</body>
+</html>
