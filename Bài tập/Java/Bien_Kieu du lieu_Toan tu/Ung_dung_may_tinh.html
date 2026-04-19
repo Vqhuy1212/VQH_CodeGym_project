@@ -9,22 +9,79 @@
 
     <input type="number" id="num1" width="20">
     <input type="number" id="num2" width="20"><br><br>
-    <button onclick="plus()">Addition(+)</button>
-    <button onclick="minus()">Subtraction(-)</button>
-    <button onclick="times()">Multiplication(*)</button>
-    <button onclick="devided()">Division(/)</button>
+    <button type="button" onclick="plus()">Addition(+)</button>
+    <button type="button" onclick="minus()">Subtraction(-)</button>
+    <button type="button" onclick="times()">Multiplication(*)</button>
+    <button type="button" onclick="devided()">Division(/)</button>
 
     <p id="ketqua"></p>
 
-
 <script>
-    function plus() {
+    function getNumbers() {
         let num1 = Number(document.getElementById("num1").value);
         let num2 = Number(document.getElementById("num2").value);
+        return [num1, num2];
+    }
+
+    function plus() {
+        let [num1, num2] = getNumbers();
         let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("ketqua").innerHTML = "Please enter valid numbers";
+            return;
+        }
+
         result = num1 + num2;
         document.getElementById("ketqua").innerHTML =
             "Result Addition: " + result;
+    }
+
+    function minus() {
+        let [num1, num2] = getNumbers();
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("ketqua").innerHTML = "Please enter valid numbers";
+            return;
+        }
+
+        result = num1 - num2;
+        document.getElementById("ketqua").innerHTML =
+            "Result Subtraction: " + result;
+    }
+
+    function times() {
+        let [num1, num2] = getNumbers();
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("ketqua").innerHTML = "Please enter valid numbers";
+            return;
+        }
+
+        result = num1 * num2;
+        document.getElementById("ketqua").innerHTML =
+            "Result Multiplication: " + result;
+    }
+
+    function devided() {
+        let [num1, num2] = getNumbers();
+        let result;
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("ketqua").innerHTML = "Please enter valid numbers";
+            return;
+        }
+
+        if (num2 === 0) {
+            document.getElementById("ketqua").innerHTML = "Cannot divide by 0";
+            return;
+        }
+
+        result = num1 / num2;
+        document.getElementById("ketqua").innerHTML =
+            "Result Division: " + result.toFixed(2);
     }
 </script>
 </body>
