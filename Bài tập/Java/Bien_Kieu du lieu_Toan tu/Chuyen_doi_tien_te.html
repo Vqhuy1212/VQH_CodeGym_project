@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi tiền</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><b>Amount</b></td>
+        <td colspan="3"><b>From Currency &nbsp;&nbsp;&nbsp; To Currency</b></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="amount" size="20"></td>
+        <td>
+            <select id="fromC">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </td>
+        <td>
+            <select id="toC">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td><button onclick="ChangeMoney()">Convert</button></td>
+    </tr>
+    <tr>
+        <td colspan="4" id="result"></td>
+    </tr>
+</table>
+
+<script>
+    const rates = {
+      VND: 25400,
+      USD: 1,
+    };
+
+    function ChangeMoney() {
+        let Amount = parseFloat(document.getElementById("amount").value);
+        let FromC = document.getElementById("fromC").value;
+        let ToC = document.getElementById("toC").value;
+        let Result = (Amount / rates[FromC]) * rates[ToC];
+
+<!--        if (FromC == "USD" && To == "VND") {-->
+<!--            Result = "Result: " + (Amount * 23000) + " Đ";-->
+<!--        }-->
+<!--        else if (FromC == "VND"&& To =="USD"){-->
+<!--            Result = "Result: "+ (Amount / 23000) + " $";-->
+<!--        }-->
+<!--        else if (FromC == "VND") {-->
+<!--            Result = "Result: " + Amount + " Đ"-->
+<!--        } else {-->
+<!--            Result = "Result: " + Amount + " $"-->
+<!--        }-->
+
+        document.getElementById("result").innerHTML = Result;
+    }
+</script>
+</body>
+</html>
