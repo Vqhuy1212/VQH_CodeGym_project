@@ -5,10 +5,11 @@
     <title>Đổi tiền</title>
 </head>
 <body>
+<form>
 <table>
     <tr>
         <td><b>Amount</b></td>
-        <td colspan="3"><b>From Currency &nbsp;&nbsp;&nbsp; To Currency</b></td>
+        <td colspan="3"><b>From Currency To Currency</b></td>
     </tr>
     <tr>
         <td><input type="text" id="amount" size="20"></td>
@@ -30,6 +31,7 @@
         <td colspan="4" id="result"></td>
     </tr>
 </table>
+</form>
 
 <script>
     const rates = {
@@ -42,6 +44,11 @@
         let FromC = document.getElementById("fromC").value;
         let ToC = document.getElementById("toC").value;
         let Result = (Amount / rates[FromC]) * rates[ToC];
+
+        if (isNaN(Amount)) {
+            document.getElementById("result").innerHTML = 'NaN';
+            return;
+        }
 
 <!--        if (FromC == "USD" && To == "VND") {-->
 <!--            Result = "Result: " + (Amount * 23000) + " Đ";-->
